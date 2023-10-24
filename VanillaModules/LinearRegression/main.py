@@ -37,7 +37,6 @@ X_test = x[train_index:]
 y_test = y[train_index:]
 
 # compute mean and standard deviation ONLY ON TRAINING SAMPLES
-
 mean = X_train.mean(axis=0)
 std = X_train.std(axis=0)
 
@@ -68,7 +67,7 @@ def k_fold_cv(X, k=5):
 
 # create a regressor with specific characteristics
 ".shape[1] given a number of elements in row"
-linear = LinearRegression(n_features=X_train.shape[1], n_steps=1000, learning_rate=0.01, lmd=0.1)
+linear = LinearRegression(n_features=X_train.shape[1], n_steps=1000, learning_rate=0.01, lmd=0)
 
 # fit (try different strategies) your trained regressor
 cost_history, cost_history_val, theta_history = linear.fit(X_train, y_train, X_validation, y_validation)
